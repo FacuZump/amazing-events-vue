@@ -26,21 +26,50 @@
         </nav>
     </header>
 
-    <main>
+    <main id="app">
         <div class="title-container">
             <h1 class="title">Upcoming Events</h1>
         </div>
         <div class="main-container">
-            <form class="main-form" id="main-form" action="get">
+            <form class="main-form" id="main-form">
+                <div class="main.form" v-for="category of categories">
+                    {{filteringEvents}}
+                    <input type="checkbox" :value="category"
+                        :name="category.split(' ').join('').toLowerCase()"
+                        :id="category.split(' ').join('').toLowerCase()" v-model="checked">
+                    <label :for="category.split(' ').join('').toLowerCase()">{{category}}</label>
+                </div>
             </form>
         </div>
         <form class="search">
             <div>
-                <input class="lupa" type="search" placeholder="Search" value="" name="search" id="search">
+                {{filteringEvents}}
+                <input class="lupa" type="search" placeholder="Search" v-model="searchInput" name="search" id="search">
                 <label for="search"><i class="fa-solid fa-magnifying-glass"></i></label>
             </div>
         </form>
-        <div class="cards-container" id="upcoming-cards">
+        <div class="cards-container" id="home-cards">
+
+            <div class="card" v-if="filterUpcomingEvents.length" v-for="event of filterUpcomingEvents">
+                <div>
+                    <img class="card-img" :src=event.image :alt="event.category">
+                </div>
+                <div>
+                    <div class="card-title">
+                        <h3>{{event.name}}</h3>
+                        <p>{{event.description}}</p>
+                    </div>
+                    <div class="card-info">
+                        <div>
+                            <p>Price: $ {{event.price}}</p>
+                        </div>
+                        <div class="more-info">
+                            <p><a href="./details.html?id={{event._id}}">More Info</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
     <footer>
@@ -53,7 +82,7 @@
             <img class="logo-media" src="./assets/images/whatsapp-logo.png" alt="">
         </div>
     </footer>
-    <script src="./assets/js/data.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
 

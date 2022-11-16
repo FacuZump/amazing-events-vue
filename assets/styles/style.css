@@ -82,7 +82,9 @@ nav a {
     color: rgb(216, 216, 216);
     background-color: rgba(0, 0, 0, 0.574);
 }
-
+.check {
+    gap: 1rem;
+}
 .main-form {
     display: flex;
     flex-direction: column;
