@@ -1,5 +1,5 @@
 const { createApp } = Vue
-
+const url = 'https://amazing-events.herokuapp.com/api/events'
 createApp({
     data() {
         return {
@@ -23,7 +23,7 @@ createApp({
         }
     },
     created() {
-        fetch('https://amazing-events.herokuapp.com/api/events')
+        fetch(url)
             .then(response => response.json())
             .then(response => {
                 this.events = response.events
@@ -81,7 +81,7 @@ createApp({
                     attendance: events.filter(e => e.category == categories[i]).map(e => (e[key] * 100) / e.capacity).reduce(fn, 0) / events.filter(e => e.category == categories[i]).length
                 }
             }
-            return catStats.sort((b, a) => a.revenue - b.revenue)
+            return catStats.filter(e => e.revenue > 0).sort((b, a) => a.revenue - b.revenue)
         }
     },
     computed: {
@@ -92,6 +92,8 @@ createApp({
             } else {
                 this.filterEvents = filterCheckbox.filter(e => e.name.toLowerCase().trim().includes(this.searchInput.toLowerCase().trim()))
             }
+
+
             const pastCheckbox = this.pastEvents.filter(e => this.checked.includes(e.category))
             this.filterPastEvents = pastCheckbox.filter(e => e.name.toLowerCase().trim().includes(this.searchInput.toLowerCase().trim()))
             if (pastCheckbox.length === 0) {
@@ -99,6 +101,8 @@ createApp({
             } else {
                 this.filterEvents = filterCheckbox.filter(e => e.name.toLowerCase().trim().includes(this.searchInput.toLowerCase().trim()))
             }
+
+
             const upcomingCheckbox = this.upcomingEvents.filter(e => this.checked.includes(e.category))
             this.filterUpcomingEvents = upcomingCheckbox.filter(e => e.name.toLowerCase().trim().includes(this.searchInput.toLowerCase().trim()))
             if (upcomingCheckbox.length === 0) {

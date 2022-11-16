@@ -57,7 +57,7 @@
                         <td>Estimate Revenues</td>
                         <td>Estimate Percentage of attendance</td>
                     </tr>
-                    <tr v-for="stat on upcomingStats">
+                    <tr v-for="stat of upcomingStats">
                         <td>{{stat.category}}</td>
                         <td>${{stat.revenue}}</td>
                         <td>{{stat.attendance.toFixed(1)}}%</td>
@@ -72,8 +72,11 @@
                         <td>Revenues</td>
                         <td>Percentage of attendance</td>
                     </tr>
-                </tbody>
-                <tbody id="past-statistics">
+                    <tr v-for="stat of pastStats">
+                        <td>{{stat.category}}</td>
+                        <td>${{stat.revenue}}</td>
+                        <td>{{stat.attendance.toFixed(1)}}%</td>
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -34,8 +34,7 @@
             <form class="main-form" id="main-form">
                 <div class="main.form" v-for="category of categories">
                     {{filteringEvents}}
-                    <input type="checkbox" :value="category"
-                        :name="category.split(' ').join('').toLowerCase()"
+                    <input type="checkbox" :value="category" :name="category.split(' ').join('').toLowerCase()"
                         :id="category.split(' ').join('').toLowerCase()" v-model="checked">
                     <label :for="category.split(' ').join('').toLowerCase()">{{category}}</label>
                 </div>
@@ -63,10 +62,13 @@
                             <p>Price: $ {{event.price}}</p>
                         </div>
                         <div class="more-info">
-                            <p><a href="./details.html?id={{event._id}}">More Info</a></p>
+                            <p><a :href="'./details.html?id='+event._id">More Info</a></p>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div v-if="filterEvents.length === 0">
+                <h1>No se encontraron eventos</h1>
             </div>
 
         </div>
