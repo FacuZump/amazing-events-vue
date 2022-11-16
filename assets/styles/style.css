@@ -82,9 +82,11 @@ nav a {
     color: rgb(216, 216, 216);
     background-color: rgba(0, 0, 0, 0.574);
 }
+
 .check {
     gap: 1rem;
 }
+
 .main-form {
     display: flex;
     flex-direction: column;
@@ -159,6 +161,11 @@ nav a {
     align-items: flex-end;
 }
 
+.empty-cards-title {
+    color: #f1e0b5;
+    text-align: center;
+}
+
 .more-info,
 .submit {
     border: 1px solid white;
@@ -230,9 +237,10 @@ nav a {
     width: 22rem;
     height: 18rem;
 }
+
 .descript-card h2 {
     font-size: 35px;
-    padding-bottom:3rem;
+    padding-bottom: 3rem;
     text-align: center;
 }
 
@@ -338,7 +346,7 @@ footer {
         flex-direction: row;
         flex-wrap: wrap;
     }
-    
+
     .descript-card-container {
         width: 35rem;
         height: 55rem;
@@ -346,23 +354,24 @@ footer {
         margin: 4rem 0;
         gap: 2rem;
     }
-    
+
     .descript-card {
         width: 32rem;
         height: 23rem;
         padding: 1rem;
         font-size: 25px;
     }
-    
+
     .descript-card img {
         min-width: 31rem;
         min-height: 20rem;
         max-width: fit-content;
         max-height: fit-content;
     }
+
     .descript-card h2 {
         font-size: 48px;
-        padding-bottom:3rem;
+        padding-bottom: 3rem;
         text-align: center;
     }
 
@@ -475,6 +484,7 @@ footer {
         max-width: fit-content;
         max-height: fit-content;
     }
+
     .descript-card h2 {
         font-size: 43px;
     }

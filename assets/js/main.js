@@ -27,8 +27,8 @@ createApp({
             .then(response => response.json())
             .then(response => {
                 this.events = response.events
-                this.filterEvents = this.events
                 this.currentDate = response.currentDate
+                this.filterEvents = this.events
                 this.createPastEvents()
                 this.createUpcomingEvents()
                 this.createCategories()
