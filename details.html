@@ -25,8 +25,25 @@
         </nav>
     </header>
 
-    <main>
+    <main id="app">
         <div id="detail-container" class="main-container">
+            <div class="descript-card-container">
+                <div class="descript-card">
+                    <div>
+                        <img class="card-img" :src=detailCard.image :alt="detailCard.category">
+                    </div>
+                </div>
+                <div class="descript-card">
+                    <div>
+                        <h2>{{detailCard.name}}</h2>
+                        <h4>Place: {{detailCard.place}}</h4>
+                        <h4>Description: {{detailCard.description}}</h4>
+                        <h4>Date: {{detailCard.date}}</h4>
+                        <h4>Category: {{detailCard.category}}</h4>
+                        <h4>Capacity: {{detailCard.capacity}}</h4>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </main>
@@ -40,8 +57,8 @@
             <img class="logo-media" src="./assets/images/whatsapp-logo.png" alt="">
         </div>
     </footer>
-    <script src="./assets/js/data.js"></script>
-    <script src="./assets/js/details.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>

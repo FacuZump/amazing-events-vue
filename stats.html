@@ -25,7 +25,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="app">
         <div class="title-container">
             <h1 class="title">Stats</h1>
         </div>
@@ -42,7 +42,10 @@
                         <td>Events with lowest percentage of attendance</td>
                         <td>Event with larger capacity</td>
                     </tr>
-                    <tr id="event-statistics">
+                    <tr>
+                        <td>{{hightAttendanceEvent.name}}</td>
+                        <td>{{lowestAttendanceEvent.name}}</td>
+                        <td>{{largerCapacityEvent.name}}</td>
                     </tr>
                     <tr>
                         <th colspan="3">
@@ -54,10 +57,11 @@
                         <td>Estimate Revenues</td>
                         <td>Estimate Percentage of attendance</td>
                     </tr>
-                </tbody>
-                <tbody id="upcoming-statistics">
-                </tbody>
-                <tbody>
+                    <tr v-for="stat on upcomingStats">
+                        <td>{{stat.category}}</td>
+                        <td>${{stat.revenue}}</td>
+                        <td>{{stat.attendance.toFixed(1)}}%</td>
+                    </tr>
                     <tr>
                         <th colspan="3">
                             Past events statistics by category
@@ -85,7 +89,8 @@
             <img class="logo-media" src="./assets/images/whatsapp-logo.png" alt="">
         </div>
     </footer>
-    <script src="./assets/js/stats.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
