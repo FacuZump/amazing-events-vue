@@ -129,7 +129,7 @@ nav a {
     border-radius: .5rem;
     height: 22rem;
     margin: 1rem;
-    background-color: rgba(0, 0, 0, 0.66);
+    background-color: rgba(0, 0, 0, 0.517);
     transition: .2s;
 }
 
@@ -169,7 +169,7 @@ nav a {
 .more-info,
 .submit {
     border: 1px solid white;
-    background-color: rgba(0, 0, 0, 0.059);
+    background-color: #f1e0b54f;
     color: white;
     text-decoration: none;
     padding: .2rem .5rem;
@@ -240,7 +240,7 @@ nav a {
 
 .descript-card h2 {
     font-size: 35px;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     text-align: center;
 }
 

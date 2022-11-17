@@ -1,4 +1,4 @@
-const { createApp } = Vue
+const createApp = Vue.createApp
 const url = 'https://amazing-events.herokuapp.com/api/events'
 createApp({
     data() {
@@ -86,6 +86,7 @@ createApp({
     },
     computed: {
         filteringEvents() {
+
             const filterCheckbox = this.events.filter(e => this.checked.includes(e.category))
             if (filterCheckbox.length === 0) {
                 this.filterEvents = this.events.filter(e => e.name.toLowerCase().trim().includes(this.searchInput.toLowerCase().trim()))

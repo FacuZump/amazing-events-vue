@@ -60,7 +60,7 @@
                     <tr v-for="stat of upcomingStats">
                         <td>{{stat.category}}</td>
                         <td>${{stat.revenue}}</td>
-                        <td>{{stat.attendance.toFixed(1)}}%</td>
+                        <td>{{stat.attendance.toFixed(2)}}%</td>
                     </tr>
                     <tr>
                         <th colspan="3">
@@ -75,7 +75,7 @@
                     <tr v-for="stat of pastStats">
                         <td>{{stat.category}}</td>
                         <td>${{stat.revenue}}</td>
-                        <td>{{stat.attendance.toFixed(1)}}%</td>
+                        <td>{{stat.attendance.toFixed(2)}}%</td>
                     </tr>
                 </tbody>
             </table>
